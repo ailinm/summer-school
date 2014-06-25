@@ -47,6 +47,38 @@ import sys
 
 ###
 
+def print_words(filename):
+    f=open(filename,"r")
+    dict = {}
+    line=[]
+    list=[]
+    j=0
+    for line in f:
+        line.strip()
+        x=line.split()
+        for i in x:
+            i=i.lower()
+            if i in dict:
+                dict[i]=dict[i]+1
+            else:
+                dict[i] = 1
+    
+    for key in dict:
+        list.insert(j,key)
+        j=j+1
+    s=sorted(list)
+    for key in s:
+        print key
+    for key2 in dict:
+        print key2,dict[key]
+        
+
+              
+        
+
+
+
+
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
 def main():
